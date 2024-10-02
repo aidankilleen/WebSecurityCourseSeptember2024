@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Display Uploaded SVG";
+    // Replace newline characters with <br> tags
+    var formattedContent = ViewBag.SVGContent?.Replace("\n", "<br />").Replace("\r", ""); // Handle \r\n in Windows
+}
+
+<h2>Uploaded SVG File</h2>
+
+<!-- Display the SVG content with newlines converted to <br> -->
+<div>
+    @Html.Raw(formattedContent)
+</div>

@@ -1,0 +1,48 @@
+﻿@model List<string>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Upload Image</h1>
+
+<form asp-controller="UploadImage" asp-action="UploadImage" enctype="multipart/form-data" method="post">
+    <div>
+        <label>Description:</label>
+        <input type="text" name="description" required />
+    </div>
+
+    <div>
+        <label>Select Image:</label>
+        <input id="fileInput" type="file" name="file" accept="image/*" required />
+    </div>
+
+    <button type="submit">Upload</button>
+</form>
+
+<hr />
+
+@if (Model.Count > 0)
+{
+    @foreach(var image in Model)
+    {
+        <div>
+            <img src="@image" width="200"/>
+        </div>
+    }
+}
+else
+{
+    <p>No Images yet</p>
+}
+
+
+
+
+
+
+
+
+
+
+

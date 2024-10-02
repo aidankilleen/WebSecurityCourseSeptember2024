@@ -1,0 +1,29 @@
+﻿<h1>XSS Demonstration?</h1>
+
+Enter a comment:
+<textarea type="text" rows="5" cols="40" id="txtComment"></textarea>
+
+<div id="content">
+</div>
+
+<hr />
+
+<form method="post" action="/XSS/">
+    <textarea id="userComment" name="userComment" type="text" rows="5" cols="40"></textarea>
+    <input type="submit" value="Submit"/>
+</form>
+
+<div>
+    @Html.Raw(ViewBag.UserComment);
+</div>
+
+@section Scripts {
+    <script>
+        $('#txtComment').on('blur', ()=>{
+            let comment = $('#txtComment').val();
+
+            document.getElementById('content').innerHTML = comment;
+        });
+    </script>
+}
+

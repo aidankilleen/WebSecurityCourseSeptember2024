@@ -1,0 +1,24 @@
+﻿@model IEnumerable<UserComment>
+
+
+    <!-- 
+        engineer an XSS that will attach a "click" event to btnLogin 
+        that makes a fetch request with the username and password
+    -->
+    <input id="username" type="text" />
+    <input id="password" type="password"/>
+    <button id="btnLogin" type="submit" value="submit">Login</button>
+
+    
+<h1>User Comments</h1>
+<a asp-action="Create">Add A New Comment</a><br />
+
+
+@foreach (var comment in Model)
+{
+    <div>
+        <h2>@comment.Author</h2>
+        <div>@Html.Raw(comment.Content)</div>
+        <div>@comment.Content</div>
+    </div>
+}

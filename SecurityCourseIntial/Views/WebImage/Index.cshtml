@@ -1,0 +1,13 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Web Image Retriever</h1>
+
+
+<form method="post" asp-action="FetchImage">
+    <label for="imageUrl">Enter a URL to fetch content:</label>
+    <input type="text" name="imageUrl" id="imageUrl" placeholder="http://example.com">
+    <button type="submit">Fetch</button>
+</form>

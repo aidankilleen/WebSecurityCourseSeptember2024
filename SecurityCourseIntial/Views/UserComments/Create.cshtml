@@ -1,0 +1,15 @@
+﻿@model UserComment
+
+<form method="post" asp-action="Create">
+    <div>
+        <label>Author</label>
+        <input asp-for="Author"/>
+    </div>
+    <div>
+        <label>Comment:</label>
+        <textarea asp-for="Content" rows="5" cols="40"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
+</form>

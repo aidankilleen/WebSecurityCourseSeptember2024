@@ -1,0 +1,11 @@
+﻿@model List<UserComment>
+
+<h1>User Comments</h1>
+
+@foreach (var comment in Model) {
+
+    <div>
+        <h2>@comment.Author</h2>
+        <p>@comment.Content</p>
+    </div>
+}
