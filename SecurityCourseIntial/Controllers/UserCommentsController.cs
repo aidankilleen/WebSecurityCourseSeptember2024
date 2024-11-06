@@ -34,7 +34,7 @@ namespace SecurityCourseIntial.Controllers
             {
                 //comment.Content = Encoder.HtmlEncode(comment.Content);
 
-                var sanitizer = new HtmlSanitizer();
+                //var sanitizer = new HtmlSanitizer();
 
                 //var cleanContent = sanitizer.Sanitize(comment.Content);
 

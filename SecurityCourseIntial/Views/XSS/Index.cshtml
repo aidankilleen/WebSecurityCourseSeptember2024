@@ -19,10 +19,15 @@ Enter a comment:
 
 @section Scripts {
     <script>
-        $('#txtComment').on('blur', ()=>{
-            let comment = $('#txtComment').val();
+        //$('#txtComment').on('blur', ()=>{
+        //    let comment = document.getElementById('txtComment').value;
+        //
+        //    document.getElementById('content').innerHTML = comment;
+        //});
 
-            document.getElementById('content').innerHTML = comment;
+        document.getElementById('txtComment').addEventListener('blur', function () {
+            const userInput = this.value;
+            document.getElementById('content').innerHTML = userInput;
         });
     </script>
 }

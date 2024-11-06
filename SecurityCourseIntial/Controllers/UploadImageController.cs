@@ -14,7 +14,9 @@ namespace SecurityCourseIntial.Controllers
         {
             // get a list of the files in the upload folder and send them to the View
 
-            var uploadFolder = $"{_webHostEnvironment.WebRootPath}\\uploads\\";
+            //var uploadFolder = $"{_webHostEnvironment.WebRootPath}\\uploads\\";
+            var uploadFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
+
             var images = new List<string>();
 
             if (Directory.Exists(uploadFolder))

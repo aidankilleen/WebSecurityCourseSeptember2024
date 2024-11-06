@@ -8,7 +8,7 @@ namespace SecurityCourseIntial.Controllers
 {
     public class UserLoginController : Controller
     {
-        private readonly string _connectionString = "Server=tcp:xxx.database.windows.net,1433;Initial Catalog=Northwind;Persist Security Info=False;User ID=;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private readonly string _connectionString = "Server=tcp:database.windows.net,1433;Initial Catalog=Northwind;Persist Security Info=False;User ID=;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public IActionResult Index()
         {
             return View();
@@ -43,18 +43,18 @@ namespace SecurityCourseIntial.Controllers
 
 
 
-                string query = $"SELECT COUNT(*) FROM UserLogins WHERE username = @Username AND epassword = @EPassword";
+                //string query = $"SELECT COUNT(*) FROM UserLogins WHERE username = @Username AND epassword = @EPassword";
 
 
-                //string query = $"SELECT COUNT(*) FROM UserLogins WHERE username = '{login.Username}' AND password = '{login.Password}'";
+                string query = $"SELECT COUNT(*) FROM UserLogins WHERE username = '{login.Username}' AND password = '{login.Password}'";
 
                 //string query = $"SELECT COUNT(*) FROM UserLogins WHERE username = @Username AND epassword = @EPassword";
                 Console.WriteLine(query);
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Username", login.Username);
-                    cmd.Parameters.AddWithValue("@EPassword", login.EPassword);
+                    //cmd.Parameters.AddWithValue("@Username", login.Username);
+                    //cmd.Parameters.AddWithValue("@EPassword", login.EPassword);
 
                     int result = (int)cmd.ExecuteScalar();
                     return result > 0;

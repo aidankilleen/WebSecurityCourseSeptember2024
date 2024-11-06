@@ -20,7 +20,7 @@ builder.Services.Configure<FormOptions>(options =>
 builder.Services.AddControllersWithViews();
 
 
-var connectionString = "Server=tcp:.database.windows.net,1433;Initial Catalog=Northwind;Persist Security Info=False;User ID=;Password=!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+var connectionString = "Server=tcp:database.windows.net,1433;Initial Catalog=Northwind;Persist Security Info=False;User ID=;Password=!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
 
 builder.Services.AddScoped<UserCommentRepository>(provider =>
